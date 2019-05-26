@@ -19,6 +19,7 @@ namespace NominaBase2019
     /// </summary>
     
         // Modificacion 1
+        // Modificacion 2
                      
     public partial class MenuPrincipal : Window
     {
