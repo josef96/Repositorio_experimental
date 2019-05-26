@@ -17,6 +17,9 @@ namespace NominaBase2019
     /// <summary>
     /// Lógica de interacción para MenuPrincipal.xaml
     /// </summary>
+    
+        // Modificacion 1
+                     
     public partial class MenuPrincipal : Window
     {
         public MenuPrincipal()
