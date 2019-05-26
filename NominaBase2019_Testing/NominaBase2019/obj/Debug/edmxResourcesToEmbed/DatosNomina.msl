@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NominaModelStoreContainer" CdmEntityContainer="NominaEntities">
+    <EntitySetMapping Name="Anticipo">
+      <EntityTypeMapping TypeName="NominaModel.Anticipo">
+        <MappingFragment StoreEntitySet="Anticipo">
+          <ScalarProperty Name="Id_Anticipo" ColumnName="Id_Anticipo" />
+          <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
+          <ScalarProperty Name="Monto_Solicitado" ColumnName="Monto_Solicitado" />
+          <ScalarProperty Name="Monto_Aprobado" ColumnName="Monto_Aprobado" />
+          <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha_Solicitud" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Fecha_Definicion" ColumnName="Fecha_Definicion" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Concepto">
+      <EntityTypeMapping TypeName="NominaModel.Concepto">
+        <MappingFragment StoreEntitySet="Concepto">
+          <ScalarProperty Name="Id_Concepto" ColumnName="Id_Concepto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="NominaModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Nro_Documento" ColumnName="Nro_Documento" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Nro_Telefono" ColumnName="Nro_Telefono" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Fecha_Incorporacion" ColumnName="Fecha_Incorporacion" />
+          <ScalarProperty Name="Imagen_Perfil" ColumnName="Imagen_Perfil" />
+          <ScalarProperty Name="Salario_Basico" ColumnName="Salario_Basico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisos">
+      <EntityTypeMapping TypeName="NominaModel.Permisos">
+        <MappingFragment StoreEntitySet="Permisos">
+          <ScalarProperty Name="Id_Permiso" ColumnName="Id_Permiso" />
+          <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
+          <ScalarProperty Name="Fecha_Desde" ColumnName="Fecha_Desde" />
+          <ScalarProperty Name="Fecha_Hasta" ColumnName="Fecha_Hasta" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Cantidad_Horas" ColumnName="Cantidad_Horas" />
+          <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha_Solicitud" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Turno">
+      <EntityTypeMapping TypeName="NominaModel.Turno">
+        <MappingFragment StoreEntitySet="Turno">
+          <ScalarProperty Name="Id_Turno" ColumnName="Id_Turno" />
+          <ScalarProperty Name="Hora_Entrada" ColumnName="Hora_Entrada" />
+          <ScalarProperty Name="Hora_Salida" ColumnName="Hora_Salida" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="NominaModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacaciones">
+      <EntityTypeMapping TypeName="NominaModel.Vacaciones">
+        <MappingFragment StoreEntitySet="Vacaciones">
+          <ScalarProperty Name="Id_Vacaciones" ColumnName="Id_Vacaciones" />
+          <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
+          <ScalarProperty Name="Fecha_Desde" ColumnName="Fecha_Desde" />
+          <ScalarProperty Name="Fecha_Hasta" ColumnName="Fecha_Hasta" />
+          <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha_Solicitud" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Fecha_Definicion" ColumnName="Fecha_Definicion" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

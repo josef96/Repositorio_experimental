@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NominaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Anticipo">
+    <Key>
+      <PropertyRef Name="Id_Anticipo" />
+    </Key>
+    <Property Name="Id_Anticipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
+    <Property Name="Monto_Solicitado" Type="Int32" Nullable="false" />
+    <Property Name="Monto_Aprobado" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_Solicitud" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha_Definicion" Type="DateTime" Precision="0" />
+    <Property Name="Observaciones" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK_Anticipo_Empleado" FromRole="Anticipo" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Concepto">
+    <Key>
+      <PropertyRef Name="Id_Concepto" />
+    </Key>
+    <Property Name="Id_Concepto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="Id_Empleado" />
+    </Key>
+    <Property Name="Id_Empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nro_Documento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Nro_Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha_Nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha_Incorporacion" Type="DateTime" Precision="0" />
+    <Property Name="Imagen_Perfil" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Salario_Basico" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Anticipo" Relationship="Self.FK_Anticipo_Empleado" FromRole="Empleado" ToRole="Anticipo" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_Empleado_Usuario" FromRole="Empleado" ToRole="Usuario" />
+    <NavigationProperty Name="Permisos" Relationship="Self.FK_Permisos_Empleado" FromRole="Empleado" ToRole="Permisos" />
+    <NavigationProperty Name="Vacaciones" Relationship="Self.FK_Vacaciones_Empleado" FromRole="Empleado" ToRole="Vacaciones" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="Id_Permiso" />
+    </Key>
+    <Property Name="Id_Permiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_Desde" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha_Hasta" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Motivo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cantidad_Horas" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_Solicitud" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK_Permisos_Empleado" FromRole="Permisos" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Turno">
+    <Key>
+      <PropertyRef Name="Id_Turno" />
+    </Key>
+    <Property Name="Id_Turno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hora_Entrada" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Hora_Salida" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Empleado_Id" Type="Int32" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK_Empleado_Usuario" FromRole="Usuario" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Vacaciones">
+    <Key>
+      <PropertyRef Name="Id_Vacaciones" />
+      <PropertyRef Name="Empleado_Id" />
+      <PropertyRef Name="Fecha_Desde" />
+      <PropertyRef Name="Fecha_Hasta" />
+      <PropertyRef Name="Fecha_Solicitud" />
+      <PropertyRef Name="Estado" />
+      <PropertyRef Name="Fecha_Definicion" />
+    </Key>
+    <Property Name="Id_Vacaciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_Desde" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha_Hasta" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha_Solicitud" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha_Definicion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Observaciones" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK_Vacaciones_Empleado" FromRole="Vacaciones" ToRole="Empleado" />
+  </EntityType>
+  <Association Name="FK_Anticipo_Empleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Anticipo" Type="Self.Anticipo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="Anticipo">
+        <PropertyRef Name="Empleado_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleado_Usuario">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Empleado_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Permisos_Empleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="Permisos">
+        <PropertyRef Name="Empleado_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacaciones_Empleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Vacaciones" Type="Self.Vacaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="Vacaciones">
+        <PropertyRef Name="Empleado_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NominaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Anticipo" EntityType="Self.Anticipo" />
+    <EntitySet Name="Concepto" EntityType="Self.Concepto" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" />
+    <EntitySet Name="Turno" EntityType="Self.Turno" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <EntitySet Name="Vacaciones" EntityType="Self.Vacaciones" />
+    <AssociationSet Name="FK_Anticipo_Empleado" Association="Self.FK_Anticipo_Empleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Anticipo" EntitySet="Anticipo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleado_Usuario" Association="Self.FK_Empleado_Usuario">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Permisos_Empleado" Association="Self.FK_Permisos_Empleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Permisos" EntitySet="Permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacaciones_Empleado" Association="Self.FK_Vacaciones_Empleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Vacaciones" EntitySet="Vacaciones" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

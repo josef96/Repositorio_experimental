@@ -1,0 +1,28 @@
+﻿<Window x:Class="NominaBase2019.MenuPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NominaBase2019"
+        mc:Ignorable="d"
+        Title="MenuPrincipal" Height="424.913" Width="467.596"
+        Background="#FF141634" WindowStartupLocation="CenterScreen" AllowsTransparency="False">
+
+    <Menu Name="Menu" Background="#FF141634" Foreground="#DDFFFFFF">
+            <MenuItem Header="Empleados">
+                <MenuItem Name="Reg_Empleado_item" Header="Registrar empleado" Click="Reg_Empleado_item_Click"></MenuItem>
+                <MenuItem Name="Turnos_Horarios_item" Header="Crear turnos/horarios" Click="Turnos_Horarios_item_Click"></MenuItem>
+                <MenuItem Name="Conceptos_param_item" Header="Crear conceptos parametrizables" Click="Conceptos_param_item_Click"></MenuItem>
+                <MenuItem Name="Anticipos_salariales_item" Header="Ver anticipos salariales" Click="Anticipos_salariales_item_Click"></MenuItem>
+                <MenuItem Name="Pedidos_vacaciones_item" Header="Ver pedidos de vacaciones" Click="Pedidos_vacaciones_item_Click"></MenuItem>
+                <MenuItem Name="Solicitudes_permisos_item" Header="Ver solicitudes de permiso" Click="Solicitudes_permisos_item_Click"></MenuItem>
+                
+            </MenuItem>
+            
+        </Menu>
+
+    
+
+
+
+</Window>
