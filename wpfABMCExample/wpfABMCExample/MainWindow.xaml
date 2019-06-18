@@ -14,7 +14,19 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="MainWindow" Height="350" Width="525">
-
+        
+        s<!--HOLA ESTO ES UNA PRUEBA (?) ASDASDASDS AGREGO CUALQUIER COSA
+            NECESITO PODER HACER QUE ESTA WEA FUNCIONE ESTA VEZ EEEEEEEEEEEEEEEEEEEE
+    EEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+    EEEEEEEEE
+    E
+    E
+    E
+    E
+    E
+    E
+    E-->
+    
 
     <StackPanel Orientation="Vertical">
             <materialDesign:Card Padding="32" Margin="16">
