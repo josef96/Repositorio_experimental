@@ -39,7 +39,7 @@
                     <CheckBox Name="chkDecoracion" Content="Decoración"></CheckBox>
                     <CheckBox Name="chkTextil" Content="Textil"></CheckBox>-->
                 </WrapPanel>
-                <Button Name="btnImagen" Grid.Column="2" Grid.Row="4" Content="Seleccionar" Width="110" Height="28" Click="btnImagen_Click"></Button>
+                <Button Name="btnImagen" Grid.Column="2" Grid.Row="4" Content="Seleccionar" Click="btnImagen_Click" Margin="9.6,0.2,27.8,-0.4"/>
 
                 <GroupBox Grid.Column="2" Grid.Row="0" Grid.RowSpan="4" Header="Imagen" Canvas.Left="352" Canvas.Top="59" Height="125" Width="110">
                     <Image Name="imgPhoto" Stretch="Fill" />
@@ -48,12 +48,12 @@
             </Grid>
         </GroupBox>
 
-        <GroupBox Header="Artesanias Existentes" Canvas.Left="10" Canvas.Top="256" Height="360" Width="466">
+        <GroupBox Header="Artesanias Existentes" Canvas.Left="10" Canvas.Top="256" Height="248" Width="466">
             <DataGrid Name="dgArtesanias" MouseDoubleClick="dgArtesanias_MouseDoubleClick"></DataGrid>
         </GroupBox>
-        <Button Name="btnLimpiar" Content="Limpiar" Canvas.Left="96" Canvas.Top="628" Click="btnLimpiar_Click"></Button>
-        <Button Name="btnEliminar" Content="Eliminar" Canvas.Left="188" Canvas.Top="628" Click="btnEliminar_Click"></Button>
-        <Button Name="btnModificar" Content="Modificar" Canvas.Left="286" Canvas.Top="628" Click="btnModificar_Click"></Button>
-        <Button Name="btnGuardar" Content="Guardar" Canvas.Left="392" Canvas.Top="628" Click="btnGuardar_Click"></Button>
+        <Button Name="btnLimpiar" Content="Limpiar" Canvas.Left="10" Canvas.Top="628" Click="btnLimpiar_Click" Width="173"></Button>
+        <Button Name="btnEliminar" Content="Eliminar" Canvas.Left="60" Canvas.Top="509" Click="btnEliminar_Click" Height="100" Width="159"></Button>
+        <Button Name="btnModificar" Content="Modificar" Canvas.Left="286" Canvas.Top="509" Click="btnModificar_Click" Height="141"></Button>
+        <Button Name="btnGuardar" Content="Guardar" Canvas.Left="392" Canvas.Top="560" Click="btnGuardar_Click" Height="90" Width="18"></Button>
     </Canvas>
 </Window>
